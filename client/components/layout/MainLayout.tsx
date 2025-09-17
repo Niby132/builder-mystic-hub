@@ -57,7 +57,9 @@ export default function MainLayout() {
               <NavItem to="/owner">For Restaurants</NavItem>
               <NavItem to="/agent">For Couriers</NavItem>
               <div className="flex gap-2 pt-2">
-                <Button variant="ghost" className="flex-1">Sign in</Button>
+                <NavLink to="/login" className={({ isActive }) => "flex-1"}>
+                  <Button variant="ghost" className="w-full">Login</Button>
+                </NavLink>
                 <Button className="flex-1">Get the app</Button>
               </div>
             </div>
