@@ -37,4 +37,11 @@ const App = () => (
   </QueryClientProvider>
 );
 
-createRoot(document.getElementById("root")!).render(<App />);
+const container = document.getElementById("root");
+if (container) {
+  // Prevent calling createRoot multiple times in HMR/dev environments
+  if (!(window as any).__zestEatsRoot) {
+    (window as any).__zestEatsRoot = createRoot(container);
+  }
+  (window as any).__zestEatsRoot.render(<App />);
+}
