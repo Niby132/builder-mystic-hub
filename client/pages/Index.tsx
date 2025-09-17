@@ -1,5 +1,6 @@
 import { DemoResponse } from "@shared/api";
 import { useEffect, useState } from "react";
+import RestaurantCard, { type Restaurant } from "@/components/RestaurantCard";
 
 export default function Index() {
   const [exampleFromServer, setExampleFromServer] = useState("");
@@ -76,5 +77,51 @@ export default function Index() {
         </div>
       </section>
     </div>
+  );
+}
+
+function RoleCard({ title, desc, href, color }: { title: string; desc: string; href: string; color: string }) {
+  return (
+    <a href={href} className="block group">
+      <div className={`rounded-xl p-[1px] bg-gradient-to-r ${color}`}>
+        <div className="rounded-xl bg-background p-6 h-full">
+          <h3 className="font-semibold text-lg mb-1 group-hover:underline">{title}</h3>
+          <p className="text-sm text-muted-foreground">{desc}</p>
+        </div>
+      </div>
+    </a>
+  );
+}
+
+function Step({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="rounded-xl border p-6 bg-card">
+      <div className="h-10 w-10 rounded-md bg-gradient-to-tr from-primary to-secondary text-white flex items-center justify-center font-bold mb-3">{title[0]}</div>
+      <h4 className="font-semibold mb-1">{title}</h4>
+      <p className="text-sm text-muted-foreground">{desc}</p>
+    </div>
+  );
+}
+
+function Featured() {
+  const list: Restaurant[] = [
+    { id: "f1", name: "Bao & Buns", image: "https://images.unsplash.com/photo-1543339308-43f2b83f27a9?q=80&w=1600&auto=format&fit=crop", rating: 4.9, categories: ["Asian", "Street food"], etaMins: 15, fee: 0.99 },
+    { id: "f2", name: "Sunrise Breakfast", image: "https://images.unsplash.com/photo-1460306855393-0410f61241c7?q=80&w=1600&auto=format&fit=crop", rating: 4.7, categories: ["Breakfast"], etaMins: 20, fee: 1.19 },
+    { id: "f3", name: "Casa de Tapas", image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=1600&auto=format&fit=crop", rating: 4.8, categories: ["Spanish"], etaMins: 25, fee: 1.49 },
+    { id: "f4", name: "Pho Real", image: "https://images.unsplash.com/photo-1557872943-16a5ac26437b?q=80&w=1600&auto=format&fit=crop", rating: 4.6, categories: ["Vietnamese"], etaMins: 22, fee: 0.99 },
+  ];
+  return (
+    <section className="container mx-auto py-8">
+      <div className="flex items-end justify-between">
+        <div>
+          <h2 className="text-2xl font-bold">Featured near you</h2>
+          <p className="text-muted-foreground">Popular picks in your area</p>
+        </div>
+        <a href="/explore" className="text-sm text-primary hover:underline">View all</a>
+      </div>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {list.map((r) => (<RestaurantCard key={r.id} r={r} />))}
+      </div>
+    </section>
   );
 }
