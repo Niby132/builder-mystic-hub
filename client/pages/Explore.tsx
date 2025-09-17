@@ -38,7 +38,7 @@ export default function Explore() {
           <Select value={sort} onValueChange={setSort}>
             <SelectTrigger className="w-[140px]"><SelectValue placeholder="Sort by" /></SelectTrigger>
             <SelectContent>
-              <SelectItem value="rating">Top rated</SelectItem>
+              <SelectItem value="rating">Highest Rated</SelectItem>
               <SelectItem value="eta">Fastest</SelectItem>
               <SelectItem value="fee">Lowest fee</SelectItem>
             </SelectContent>
