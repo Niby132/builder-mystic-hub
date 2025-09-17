@@ -28,6 +28,7 @@ const App = () => (
             <Route path="/explore" element={<Explore />} />
             <Route path="/owner" element={<Owner />} />
             <Route path="/agent" element={<Agent />} />
+            <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
