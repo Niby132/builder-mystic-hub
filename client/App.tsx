@@ -12,6 +12,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import Explore from "./pages/Explore";
 import Owner from "./pages/Owner";
 import Agent from "./pages/Agent";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient();
 
