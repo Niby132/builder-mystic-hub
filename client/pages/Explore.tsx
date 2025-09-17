@@ -11,7 +11,7 @@ const DATA: Restaurant[] = [
   { id: "3", name: "Green Bowl", image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1600&auto=format&fit=crop", rating: 4.9, categories: ["Healthy", "Vegan"], etaMins: 15, fee: 0.99 },
   { id: "4", name: "Spice Route", image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop", rating: 4.7, categories: ["Indian", "Curry"], etaMins: 30, fee: 1.49 },
   { id: "5", name: "Burger Lab", image: "https://images.unsplash.com/photo-1552611052-33e04de081de?q=80&w=1600&auto=format&fit=crop", rating: 4.5, categories: ["Burgers", "American"], etaMins: 18, fee: 1.29 },
-  { id: "6", name: "Mama’s Tacos", image: "https://images.unsplash.com/photo-1617195737492-7d6f0b2e3d52?q=80&w=1600&auto=format&fit=crop", rating: 4.6, categories: ["Mexican", "Tacos"], etaMins: 22, fee: 1.19 },
+  { id: "6", name: "Mama’s Tacos", image: "https://cdn.builder.io/api/v1/image/assets%2F689080b97b9141cc964dbd3c01a0fa52%2Fc201b873433d479db1b4ca2c7c8bc4d3", rating: 4.6, categories: ["Mexican", "Tacos"], etaMins: 22, fee: 1.19 },
 ];
 
 export default function Explore() {
