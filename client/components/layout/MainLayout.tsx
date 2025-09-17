@@ -36,7 +36,13 @@ export default function MainLayout() {
           </nav>
 
           <div className="hidden md:flex items-center gap-2">
-            <Button variant="ghost" className="hidden sm:inline-flex">Sign in</Button>
+            <NavLink to="/login">
+              {({ isActive }: { isActive: boolean }) => (
+                <Button className={`hidden sm:inline-flex ${isActive ? "bg-primary text-primary-foreground shadow" : ""}`}>
+                  Login
+                </Button>
+              )}
+            </NavLink>
             <Button className="shadow hover:shadow-lg">Get the app</Button>
           </div>
 
